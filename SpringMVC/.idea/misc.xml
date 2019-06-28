@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$PROJECT_DIR$/SpringMvcException" />
+    <file type="web" url="file://$PROJECT_DIR$/SpringMvcFile" />
+    <file type="web" url="file://$PROJECT_DIR$/SpringMvcInterceptor" />
+    <file type="web" url="file://$PROJECT_DIR$/SpringMvcResponse" />
+    <file type="web" url="file://$PROJECT_DIR$/SpringMvcStart" />
+    <file type="web" url="file://$PROJECT_DIR$/SSM" />
+  </component>
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/SpringMvcStart/pom.xml" />
+        <option value="$PROJECT_DIR$/SpringMvcResponse/pom.xml" />
+        <option value="$PROJECT_DIR$/SpringMvcFile/pom.xml" />
+        <option value="$PROJECT_DIR$/SpringMvcException/pom.xml" />
+        <option value="$PROJECT_DIR$/SpringMvcInterceptor/pom.xml" />
+        <option value="$PROJECT_DIR$/SSM/pom.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectRootManager">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+</project>

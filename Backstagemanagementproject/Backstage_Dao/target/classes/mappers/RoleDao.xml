@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.backstage.dao.RoleDao"><!--映射Dao接口-->
+
+    <resultMap id="findByPeidBase" type="Role">
+        <id column="rid" property="rid"></id>
+        <result column="roleName" property="roleName"></result>
+        <result column="roleDesc" property="roleDesc"></result>
+        <collection property="permissions" ofType="Permission"
+            select="com.backstage.dao.PermissionDao.findByRid"
+            column="rid"
+        >
+        </collection>
+    </resultMap>
+
+    <resultMap id="findByPeIdBase" type="Role">
+        <id column="rid" property="rid"></id>
+        <id column="roleName" property="roleName"></id>
+        <id column="roleDesc" property="roleDesc"></id>
+        <collection property="permissions" ofType="Permission"
+            select="com.backstage.dao.PermissionDao.findByRid"
+            column="rid"
+        >
+
+        </collection>
+    </resultMap>
+
+    <select id="findByUid" resultType="Role">
+        SELECT * FROM role r JOIN users_role ur
+        ON r.rid = ur.roleId
+        WHERE ur.userId = #{uid}
+    </select>
+
+    <select id="findById" resultMap="findByPeidBase">
+        SELECT * FROM role WHERE rid IN (SELECT roleId FROM users_role WHERE userId = #{uid});
+    </select>
+
+    <select id="findAll" resultType="Role">
+        SELECT * FROM role
+    </select>
+
+    <insert id="save">
+        INSERT INTO role VALUES (#{rid},#{roleName},#{roleDesc})
+    </insert>
+
+    <select id="findByPeId" resultMap="findByPeIdBase">
+        SELECT * FROM role WHERE rid=#{rid}
+    </select>
+
+    <select id="findByRid" resultType="Permission">
+        SELECT * FROM permission WHERE peid NOT IN (SELECT permissionId FROM role_permission WHERE roleId = #{rid})
+    </select>
+
+    <insert id="addPermissionToRole">
+        INSERT INTO role_permission VALUES (#{s},#{roleId})
+    </insert>
+</mapper>

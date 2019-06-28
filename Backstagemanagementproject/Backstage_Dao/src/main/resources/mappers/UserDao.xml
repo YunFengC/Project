@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.backstage.dao.UserDao"><!--映射Dao接口-->
+    <resultMap id="BaseResultMapUserByRole" type="UserInfo">
+        <id column="uid" property="uid"></id>
+        <result column="username" property="username"></result>
+        <result column="email" property="email"></result>
+        <result column="password" property="password"></result>
+        <result column="phoneNum" property="phoneNum"></result>
+        <result column="status" property="status"></result>
+        <collection property="roles" ofType="Role"
+            select="com.backstage.dao.RoleDao.findByUid"
+            column="uid"
+        >
+        </collection>
+    </resultMap>
+    <resultMap id="findByIdBase" type="UserInfo">
+        <id column="uid" property="uid"></id>
+        <result column="username" property="username"></result>
+        <collection property="roles" ofType="Role"
+            select="com.backstage.dao.RoleDao.findById"
+            column="uid"
+        >
+        </collection>
+    </resultMap>
+
+    <select id="findByUsername" resultMap="BaseResultMapUserByRole">
+          select * from users where username=#{username}
+    </select>
+
+    <select id="findAll" resultType="UserInfo">
+        SELECT * FROM users
+    </select>
+
+    <select id="addByIdRoleName" resultType="Role">
+        SELECT * FROM role WHERE rid NOT IN (SELECT roleId FROM users_role WHERE userId=#{id})
+    </select>
+
+    <insert id="addRoleToUser">
+        INSERT INTO users_role VALUES (#{uid},#{s})
+    </insert>
+
+    <insert id="save">
+        INSERT INTO users VALUES (#{uid},#{email},#{username},#{password},#{phoneNum},#{status})
+    </insert>
+
+    <delete id="delete">
+        DELETE FROM users WHERE uid=#{s}
+    </delete>
+
+    <select id="findUserId" resultType="UserInfo">
+        SELECT * FROM users WHERE uid = #{id}
+    </select>
+
+    <select id="findByRid" resultMap="findByIdBase">
+        SELECT * FROM users WHERE uid = #{uid}
+    </select>
+</mapper>

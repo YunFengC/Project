@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Backstage_Dao/Backstage_Dao.iml" filepath="$PROJECT_DIR$/Backstage_Dao/Backstage_Dao.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Backstage_Domain/Backstage_Domain.iml" filepath="$PROJECT_DIR$/Backstage_Domain/Backstage_Domain.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Backstage_Service/Backstage_Service.iml" filepath="$PROJECT_DIR$/Backstage_Service/Backstage_Service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Backstage_Utils/Backstage_Utils.iml" filepath="$PROJECT_DIR$/Backstage_Utils/Backstage_Utils.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Backstage_Web/Backstage_Web.iml" filepath="$PROJECT_DIR$/Backstage_Web/Backstage_Web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Backstagemanagementproject.iml" filepath="$PROJECT_DIR$/Backstagemanagementproject.iml" />
+    </modules>
+  </component>
+</project>

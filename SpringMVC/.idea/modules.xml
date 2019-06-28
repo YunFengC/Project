@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/SSM/SSM.iml" filepath="$PROJECT_DIR$/SSM/SSM.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpringMvcException/SpringMvcException.iml" filepath="$PROJECT_DIR$/SpringMvcException/SpringMvcException.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpringMvcFile/SpringMvcFile.iml" filepath="$PROJECT_DIR$/SpringMvcFile/SpringMvcFile.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpringMvcInterceptor/SpringMvcInterceptor.iml" filepath="$PROJECT_DIR$/SpringMvcInterceptor/SpringMvcInterceptor.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpringMvcResponse/SpringMvcResponse.iml" filepath="$PROJECT_DIR$/SpringMvcResponse/SpringMvcResponse.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpringMvcStart/SpringMvcStart.iml" filepath="$PROJECT_DIR$/SpringMvcStart/SpringMvcStart.iml" />
+    </modules>
+  </component>
+</project>

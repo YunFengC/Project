@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context-4.0.xsd
+       http://www.springframework.org/schema/aop
+       http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
+       http://www.springframework.org/schema/tx
+       http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
+       http://www.springframework.org/schema/util
+       http://www.springframework.org/schema/util/spring-util-4.0.xsd">
+
+    <!--配置数据库连接池-阿里-->
+    <bean class="com.alibaba.druid.pool.DruidDataSource" id="dataSource">
+        <!-- 驱动 -->
+        <property name="driverClassName" value="com.mysql.jdbc.Driver" />
+        <!-- url -->
+        <property name="url" value="jdbc:mysql://localhost:3306/ssm" />
+        <!-- 用户名 -->
+        <property name="username" value="root" />
+        <!-- 密码 -->
+        <property name="password" value="root" />
+    </bean>
+    <!--Mapper配置-->
+    <!--让 spring 管理 sqlsessionfactory 使用mybatis和spring整合包中的-->
+    <bean id="factory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <!--连接数据库-->
+        <property name="dataSource" ref="dataSource"></property>
+        <!--设置别名-->
+        <property name="typeAliasesPackage" value="com.maven.domain"></property>
+        <!--设置自定义路径-->
+        <property name="mapperLocations" value="classpath:mappers/*.xml"></property>
+    </bean>
+    <!--配置Mapper扫描器：用来产生代理对象-->
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer" id="configurer">
+        <property name="basePackage" value="com.maven.dao"></property>
+    </bean>
+
+
+</beans>

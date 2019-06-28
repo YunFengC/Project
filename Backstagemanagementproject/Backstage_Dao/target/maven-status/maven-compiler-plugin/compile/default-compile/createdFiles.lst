@@ -1,0 +1,7 @@
+com\backstage\dao\MemberDao.class
+com\backstage\dao\UserDao.class
+com\backstage\dao\ProductDao.class
+com\backstage\dao\RoleDao.class
+com\backstage\dao\PermissionDao.class
+com\backstage\dao\TravellerDao.class
+com\backstage\dao\OrdersDao.class

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="Backstage_Dao" />
+        <module name="Backstage_Domain" />
+        <module name="Backstage_Service" />
+        <module name="Backstage_Utils" />
+        <module name="Backstage_Web" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel target="1.8">
+      <module name="Backstage_Dao" target="1.5" />
+      <module name="Backstage_Domain" target="1.5" />
+      <module name="Backstage_Service" target="1.5" />
+      <module name="Backstage_Utils" target="1.5" />
+      <module name="Backstage_Web" target="1.7" />
+      <module name="Backstagemanagementproject" target="1.5" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/SSM" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/SpringMvcException" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/SpringMvcFile" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/SpringMvcInterceptor" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/SpringMvcResponse" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/SpringMvcStart" charset="UTF-8" />
+  </component>
+</project>

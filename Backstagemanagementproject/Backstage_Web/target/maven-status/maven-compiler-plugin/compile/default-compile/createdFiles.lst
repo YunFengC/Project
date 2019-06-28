@@ -1,0 +1,5 @@
+com\backstage\controller\PermissionController.class
+com\backstage\controller\RoleController.class
+com\backstage\controller\ProductController.class
+com\backstage\controller\OrdersController.class
+com\backstage\controller\UserController.class

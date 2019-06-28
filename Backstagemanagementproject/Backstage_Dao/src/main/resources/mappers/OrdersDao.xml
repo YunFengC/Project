@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.backstage.dao.OrdersDao"><!--映射Dao接口-->
+    <resultMap id="BaseResultMapOrders" type="Orders">
+        <id column="oid" property="oid"></id>
+        <id column="orderNum" property="orderNum"></id>
+        <id column="orderTime" property="orderTime"></id>
+        <id column="peopleCount" property="peopleCount"></id>
+        <id column="orderDesc" property="orderDesc"></id>
+        <id column="payType" property="payType"></id>
+        <id column="orderStatus" property="orderStatus"></id>
+        <association javaType="Product" property="product">
+            <id column="productName"    property="productName" ></id>
+            <id column="productPrice"  property="productPrice"></id>
+        </association>
+    </resultMap>
+    <resultMap id="BaseResultMapOrdersFindId" type="Orders">
+        <id column="orderNum" property="orderNum"></id>
+        <result column="orderTime" property="orderTime"></result>
+        <result column="peopleCount" property="peopleCount"></result>
+        <result column="orderDesc" property="orderDesc"></result>
+        <association property="product" javaType="Product">
+            <result column="cityName" property="cityName"></result>
+            <result column="productName" property="productName"></result>
+            <result column="departureTime" property="departureTime"></result>
+        </association>
+        <association property="member" javaType="Member">
+            <result column="mid" property="mid"></result>
+            <result column="name" property="name"></result>
+            <result column="nickname" property="nickname"></result>
+            <result column="phoneNum" property="phoneNum"></result>
+            <result column="email" property="email"></result>
+        </association>
+        <collection property="travellers" ofType="Traveller"
+            select="com.backstage.dao.TravellerDao.findById"
+            column="oid"
+        >
+        </collection>
+    </resultMap>
+
+    <!--查询所有商品 -->
+    <select id="getAll" resultMap="BaseResultMapOrders">
+        SELECT * FROM orders o JOIN product p ON o.productId = p.pid
+    </select>
+    <!--根据ID查询订单详情 -->
+    <select id="findById" resultMap="BaseResultMapOrdersFindId">
+        /*orders外键指向的查询product表和member表*/
+        SELECT * FROM orders o
+        LEFT JOIN product p ON o.productId = p.pid
+        LEFT JOIN member m ON o.memberId = m.mid
+    </select>
+</mapper>
